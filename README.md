@@ -42,3 +42,21 @@ GET /api/orders?email=user@example.com → Get orders by email
 
 Author : Arman Ahmed
 GitHub : https://github.com/Armanahmed12
+
+
+
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/index.ts"
+    }
+  ]
+}
