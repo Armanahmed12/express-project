@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { OrderServices } from './order.service.js';
 import { orderItemZodSchema } from './order.validation.js';
-// import { ProductModel } from "../product/product.model";
 
 const createNewOrder = async (req: Request, res: Response) => {
   try {
@@ -34,6 +33,7 @@ const createNewOrder = async (req: Request, res: Response) => {
     //   this code finally creating the order after updating the matched product
     const createdOrder =
       await OrderServices.crateNewOrderIntoDB(validatedOrderData);
+
     res.status(200).json({
       success: true,
       message: 'Order created successfully!',

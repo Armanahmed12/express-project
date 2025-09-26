@@ -23,9 +23,9 @@ const findOrdersByQueryEmailFromDB = async (userEmail: string) => {
 const updateTheMatchedPro = async (order: TOrderItem) => {
   const product = await ProductModel.findById(order.productId);
   if (!product || product.inventory.quantity < order.quantity) {
-    console.log('Falsy', order.quantity, product?.inventory);
     return false;
   }
+
   product.inventory.quantity -= order.quantity;
   product.inventory.inStock = product.inventory.quantity > 0;
   await product.save();
