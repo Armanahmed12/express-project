@@ -12,7 +12,7 @@ app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('WELCOME TO EXPRESS WORLD My Friend John!');
+  res.send('WELCOME TO EXPRESS WORLD My Friend!');
 });
 
 // 404 handler (must be after all routes)
